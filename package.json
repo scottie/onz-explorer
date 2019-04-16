@@ -20,7 +20,9 @@
     "validate": "webpack-validator webpack.config.js",
     "copy-files": "cp -r ./src/assets/img/favicon.ico ./src/assets/img/leaflet ./public",
     "build": "npm run copy-files && webpack",
-    "build:prod": "webpack --env.prod"
+    "build:prod": "webpack --env.prod",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "amstock3": "github:amcharts/amstock3",
@@ -60,13 +62,14 @@
     "redis": "^2.6.2",
     "request": "^2.75.0",
     "sigma": "https://github.com/goVanilla/sigma.js.git",
-    "socket.io": "^1.4.8",
+    "socket.io": "^2.0.2",
     "socket.io-client": "^2.0.3",
     "split": "^1.0.0",
     "underscore": "^1.8.3",
     "webpack": "^2.4.1",
-    "webpack-bundle-analyzer": "^2.3.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-dev-server": "^3.1.11",
+    "snyk": "^1.151.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -129,5 +132,6 @@
     "style-loader": "^0.16.1",
     "supertest": "^2.0.1",
     "webpack-merge": "^4.1.0"
-  }
+  },
+  "snyk": true
 }
